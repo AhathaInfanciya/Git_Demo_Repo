@@ -11,7 +11,7 @@ def divide_numbers(x, y):
     if y == 0:
         return "Error: Division by zero"
     return x / y
-
+#mali told to add comments to the code
 a = int(input("Enter first number: "))
 b = int(input("Enter second number: "))
 c = input("Enter operation (+, -, *, /): ")
@@ -25,4 +25,4 @@ elif c == "*":
 elif c == "/":
     print("Result:", divide_numbers(a, b))
 else:
-    print("Invalid operation")
+    print("Invalid input.")
