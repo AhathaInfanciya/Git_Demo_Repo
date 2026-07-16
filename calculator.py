@@ -1,11 +1,14 @@
 def add_numbers(x, y):
     return x + y
 
+
 def subtract_numbers(x, y):
     return x - y
 
+
 def multiply_numbers(x, y):
     return x * y
+
 
 def divide_numbers(x, y):
     if y == 0:
@@ -14,20 +17,39 @@ def divide_numbers(x, y):
 
 
 def main():
-    a = int(input("Enter first number: "))
-    b = int(input("Enter second number: "))
-    c = input("Enter operation (+, -, *, /): ")
+    while True:
+        try:
+            a = float(input("Enter first number: "))
+            break
+        except Exception:
+            print("Invalid input")
+
+    while True:
+        try:
+            b = float(input("Enter second number: "))
+            break
+        except Exception:
+            print("Invalid input")
+
+    while True:
+        c = input("Enter operation (+, -, *, /): ")
+        if c in ["+", "-", "*", "/"]:
+            break
+        print("Invalid operation. Please enter +, -, * or /")
 
     if c == "+":
-        print("Result:", add_numbers(a, b))
+        result = add_numbers(a, b)
     elif c == "-":
-        print("Result:", subtract_numbers(a, b))
+        result = subtract_numbers(a, b)
     elif c == "*":
-        print("Result:", multiply_numbers(a, b))
+        result = multiply_numbers(a, b)
     elif c == "/":
-        print("Result:", divide_numbers(a, b))
+        result = divide_numbers(a, b)
+
+    if result.is_integer():
+        print("Result:", int(result))
     else:
-        print("Invalid operation")
+        print("Result:", result)
 
 
 if __name__ == "__main__":
