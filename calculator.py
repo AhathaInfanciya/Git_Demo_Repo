@@ -22,14 +22,14 @@ def main():
             a = float(input("Enter first number: "))
             break
         except Exception:
-            print("Invalid input")
+            print("Invalid input.Enter a valid number.")
 
     while True:
         try:
             b = float(input("Enter second number: "))
             break
         except Exception:
-            print("Invalid input")
+            print("Invalid input.Enter a valid number.")
 
     while True:
         c = input("Enter operation (+, -, *, /): ")
