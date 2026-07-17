@@ -46,11 +46,12 @@ def main():
     elif c == "/":
         result = divide_numbers(a, b)
 
-    if result.is_integer():
+    if isinstance(result, str):
+        print("Result:", result)
+    elif result.is_integer():
         print("Result:", int(result))
     else:
         print("Result:", result)
-
 
 if __name__ == "__main__":
     main()
