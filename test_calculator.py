@@ -22,7 +22,7 @@ def test_multiply_numbers():
 
 
 def test_divide_numbers():
-    assert divide_numbers(10, 5) == 2.0
+    assert divide_numbers(10, 5) == 2
 
 
 def test_divide_by_zero():
@@ -54,7 +54,7 @@ def test_main_divide_operation(capsys):
     with patch("builtins.input", side_effect=["10", "5", "/"]):
         main()
     out = capsys.readouterr().out.strip()
-    assert out == "Result: 2.0"
+    assert out == "Result: 2"
 
 
 def test_main_divide_by_zero_prints_error(capsys):
@@ -65,7 +65,10 @@ def test_main_divide_by_zero_prints_error(capsys):
 
 
 def test_main_invalid_operation(capsys):
-    with patch("builtins.input", side_effect=["1", "2", "x"]):
+    with patch("builtins.input", side_effect=["1", "2", "x", "+"]):
         main()
+
     out = capsys.readouterr().out.strip()
-    assert out == "Invalid operation"
+
+    assert "Invalid operation" in out
+    assert "Result: 3" in out
